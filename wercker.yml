@@ -3,7 +3,8 @@ services:
   - wercker/mysql
 build:
   steps:
-    - script:
-      name: Code Test
-      code: |-
-        pwd
+    -  script:
+        name: some simple test!
+        code: |-
+          echo "line 1"
+          echo "line 2"
