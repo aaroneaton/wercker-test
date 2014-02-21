@@ -1,0 +1,9 @@
+box: channeleaton/Box-Lemp-WordPress
+services:
+  - wercker/mysql
+build:
+  steps:
+    - script:
+      name: Code Test
+      code: |-
+        pwd
