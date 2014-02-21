@@ -1,4 +1,4 @@
-box: channeleaton/Box-Lemp-WordPress
+box: channeleaton/Box-LEMP-WordPress
 services:
   - wercker/mysql
 build:
