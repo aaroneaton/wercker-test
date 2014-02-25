@@ -13,6 +13,6 @@ build:
           wp core version
   after-steps:
     - sherzberg/slack-notify:
-      subdomain: $SLACK_SUBDOMAIN
-      token: $SLACK_TOKEN
-      channel: $SLACK_CHANNEL
+        subdomain: $SLACK_SUBDOMAIN
+        token: $SLACK_TOKEN
+        channel: $SLACK_CHANNEL
