@@ -1,10 +1,12 @@
-box: channeleaton/Box-LEMP-WordPress
+box: channeleaton/box-lemp-wordpress
 services:
   - wercker/mysql
 build:
   steps:
     -  script:
-        name: some simple test!
+        name: Setup WordPress
         code: |-
-          echo "line 1"
-          echo "line 2"
+          cd /srv/www/wordpress
+          wp core config --dbname=WERCKER_MYSQL_DATABASE --dbuser=WERCKER_MYSQL_USERNAME --dbpass=WERCKER_MYSQL_PASSWORD
+          wp core install --url="local.wordpress.dev" --title="Wercker Test" --admin_user="admin" --admin_password="password" --admin_email="test@test.com"
+          wp core version
