@@ -9,10 +9,9 @@ build:
           ls -la /srv/www/wp-cli/bin/wp
           sudo chmod +x /usr/local/bin/wp
           cd /srv/www/wordpress
-          /srv/www/wp-cli/bin/wp help
-#          /srv/www/wp-cli/bin/wp core config --dbname=$WERCKER_MYSQL_DATABASE --dbuser=$WERCKER_MYSQL_USERNAME --dbpass=$WERCKER_MYSQL_PASSWORD --dbhost=$WERCER_MYSQL_HOST
-#          /srv/www/wp-cli/bin/wp core install --url="local.wordpress.dev" --title="Wercker Test" --admin_user="admin" --admin_password="password" --admin_email="test@test.com"
-#          /srv/www/wp-cli/bin/wp core version
+          wp core config --dbname=$WERCKER_MYSQL_DATABASE --dbuser=$WERCKER_MYSQL_USERNAME --dbpass=$WERCKER_MYSQL_PASSWORD --dbhost=$WERCER_MYSQL_HOST
+          wp core install --url="local.wordpress.dev" --title="Wercker Test" --admin_user="admin" --admin_password="password" --admin_email="test@test.com"
+          wp core version
   after-steps:
     - williamli/slack-notify-no-owner-info@0.0.10:
         subdomain: $SLACK_SUBDOMAIN
