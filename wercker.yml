@@ -8,7 +8,7 @@ build:
         code: |-
           ls -la /usr/local/bin/wp
           cd /srv/www/wordpress
-          /srv/www/wp-cli/bin/wp core config --dbname=WERCKER_MYSQL_DATABASE --dbuser=WERCKER_MYSQL_USERNAME --dbpass=WERCKER_MYSQL_PASSWORD
+          /srv/www/wp-cli/bin/wp core config --dbname=$WERCKER_MYSQL_DATABASE --dbuser=$WERCKER_MYSQL_USERNAME --dbpass=$WERCKER_MYSQL_PASSWORD
           /srv/www/wp-cli/bin/wp core install --url="local.wordpress.dev" --title="Wercker Test" --admin_user="admin" --admin_password="password" --admin_email="test@test.com"
           /srv/www/wp-cli/bin/wp core version
   after-steps:
