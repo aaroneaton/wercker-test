@@ -7,6 +7,7 @@ build:
         name: Setup WordPress
         code: |-
           ls -la /srv/www/wp-cli/bin/wp
+          sudo chmod +x /usr/local/bin/wp
           cd /srv/www/wordpress
           /srv/www/wp-cli/bin/wp help
 #          /srv/www/wp-cli/bin/wp core config --dbname=$WERCKER_MYSQL_DATABASE --dbuser=$WERCKER_MYSQL_USERNAME --dbpass=$WERCKER_MYSQL_PASSWORD --dbhost=$WERCER_MYSQL_HOST
