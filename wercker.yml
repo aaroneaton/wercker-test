@@ -12,7 +12,7 @@ build:
           /srv/www/wp-cli/bin/wp core install --url="local.wordpress.dev" --title="Wercker Test" --admin_user="admin" --admin_password="password" --admin_email="test@test.com"
           /srv/www/wp-cli/bin/wp core version
   after-steps:
-    - sherzberg/slack-notify:
+    - williamli/slack-notify-no-owner-info@0.0.10:
         subdomain: $SLACK_SUBDOMAIN
         token: $SLACK_TOKEN
         channel: $SLACK_CHANNEL
