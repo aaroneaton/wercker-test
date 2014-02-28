@@ -11,7 +11,7 @@ build:
           cd /srv/www/wordpress
           echo $WERCKER_MYSQL_PASSWORD
           echo $WERCKER_MYSQL_DATABASE
-          wp core config --dbname=$WERCKER_MYSQL_DATABASE --dbuser=$WERCKER_MYSQL_USERNAME --dbhost=$WERCKER_MYSQL_HOST --dbpass="$WERCKER_MYSQL_PASSWORD"
+          wp core config --dbname=$WERCKER_MYSQL_DATABASE --dbuser=$WERCKER_MYSQL_USERNAME --dbhost=$WERCKER_MYSQL_HOST --dbpass=$WERCKER_MYSQL_PASSWORD
           wp core install --url="local.wordpress.dev" --title="Wercker Test" --admin_user="admin" --admin_password="password" --admin_email="test@test.com"
           wp core version
   after-steps:
