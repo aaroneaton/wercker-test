@@ -7,7 +7,7 @@ build:
         name: Setup WordPress
         code: |-
           ls -la
-          sudo chmod +x /usr/local/bin/wp
+#          sudo chmod +x /usr/local/bin/wp
           cd /srv/www/wordpress
           wp core config --dbname=$WERCKER_MYSQL_DATABASE --dbuser=$WERCKER_MYSQL_USERNAME --dbhost=$WERCKER_MYSQL_HOST --dbpass=$WERCKER_MYSQL_PASSWORD
           wp core install --url="local.wordpress.dev" --title="Wercker Test" --admin_user="admin" --admin_password="password" --admin_email="test@test.com"
